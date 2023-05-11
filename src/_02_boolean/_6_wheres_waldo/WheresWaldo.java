@@ -50,12 +50,23 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void setup() {
-        
+        PImage waldo;
+        waldo = loadImage("waldo.jpg");
+        waldo.resize(WIDTH, HEIGHT);
+        background(waldo);
     }
 
     @Override
     public void draw() {
-        
+        println("X: " + mouseX + " Y: " + mouseY);
+        if (mouseX <= 418 && mouseX >= 373 && mouseY >= 203 && mouseY <= 283 && mousePressed) {
+        	playWhoohoo();
+        }
+        else if (mousePressed){
+        	playDoh();
+        }
+        //x range: 373 - 418
+        //y range: 203 - 283
     }
 
     static public void main(String[] args) {
